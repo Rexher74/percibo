@@ -227,6 +227,28 @@ const E = {
     const a = Math.atan2(y2 - y1, x2 - x1), s = 14;
     this.poly([{ x: x2, y: y2 }, { x: x2 - s * Math.cos(a - 0.45), y: y2 - s * Math.sin(a - 0.45) }, { x: x2 - s * Math.cos(a + 0.45), y: y2 - s * Math.sin(a + 0.45) }], c);
   },
+  /* Muestra fn durante ~ms (sincronizado con los fotogramas). */
+  async flash(fn, ms) {
+    this.paint(fn); const t0 = performance.now();
+    await this.frame();
+    while (performance.now() - t0 < ms - 6) await this.frame();
+  },
+  /* Escalera adaptativa: baja el nivel al acertar, lo sube al fallar. Devuelve la media geométrica de los últimos 6 niveles. */
+  async staircase({ n = 12, start, down = 0.72, up = 1 / 0.6, min, max, trial }) {
+    let lv = start; const hist = [];
+    for (let i = 0; i < n; i++) {
+      const ok = await trial(lv, i); hist.push(lv);
+      lv = clamp(ok ? lv * down : lv * up, min, max);
+    }
+    const last = hist.slice(-6);
+    return Math.exp(last.reduce((s, v) => s + Math.log(v), 0) / last.length);
+  },
+  /* Superpone ✓ / ✗ al dibujo actual un instante. */
+  async feedback(ok, y = 465, ms = 380) {
+    const prev = this.painter;
+    this.paint(() => { prev && prev(); this.text(ok ? '✓' : '✗', 400, y, { size: 26, weight: 700, color: ok ? C.truth : C.bad }); });
+    await this.wait(ms);
+  },
   async countdown() {
     for (const n of [3, 2, 1]) { this.paint(() => this.text(String(n), 400, 250, { size: 96, weight: 700, color: C.ink })); await this.wait(420); }
     this.paint(null); await this.wait(150);

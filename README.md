@@ -1,10 +1,10 @@
 # Percibo
 
-Juego web de retos de percepción: cada día, cinco pruebas elegidas entre veinte. Dos minutos, una puntuación.
+Juego web de retos de percepción: cada día, cinco pruebas elegidas entre cincuenta. Dos minutos, una puntuación.
 
 **Jugar:** https://rexher74.github.io/percibo/
 
-## Los 20 retos
+## Los 50 retos
 
 | | Reto | Qué mide |
 |---|---|---|
@@ -28,6 +28,36 @@ Juego web de retos de percepción: cada día, cinco pruebas elegidas entre veint
 | 🔲 | Cuadrado | Convertir un rectángulo inclinado en cuadrado |
 | 🏹 | Flechas | Ilusión de Müller-Lyer |
 | 🧱 | Oculta | Ilusión de Poggendorff |
+| 🌼 | Pétalos | Ilusión de Ebbinghaus |
+| 🛤️ | Vías | Ilusión de Ponzo |
+| 🗼 | Vertical | Ilusión vertical-horizontal |
+| 🍌 | Arcos | Ilusión de Jastrow |
+| 🪞 | Espejo | Localizar el reflejo de un punto |
+| ✖️ | Cruce | Extrapolar dónde se cruzan dos segmentos |
+| 🔷 | Esquina | Completar un paralelogramo |
+| 🧵 | Alinear | Colinealidad de tres puntos |
+| 🥛 | Vaso | Estimar volumen en un vaso cónico |
+| 〰️ | Caminos | Comparar longitudes de curvas |
+| ⚪ | Promedio | Percepción de conjunto: tamaño medio |
+| 🥚 | Redondo | Distinguir un círculo de elipses |
+| 👓 | Agudeza | Agudeza visual (anillo de Landolt) |
+| 🌫️ | Niebla | Umbral de contraste |
+| 🔬 | Vernier | Hiperagudeza de alineación |
+| 📸 | Vistazo | Tiempo de inspección |
+| 🚦 | Orden | Juicio de orden temporal |
+| 🎶 | Agudo | Discriminación de tono (necesita sonido) |
+| 🔊 | Volumen | Discriminación de intensidad (necesita sonido) |
+| 🧩 | Búsqueda | Búsqueda visual de una T entre eles |
+| 🕵️ | Vigila | Seguimiento de varios objetos |
+| 🎭 | Stroop | Efecto Stroop |
+| ➡️ | Flancos | Tarea de flancos |
+| 🌐 | Periferia | Campo visual útil |
+| 🧶 | Cables | Seguir un contorno enredado |
+| 🧠 | Secuencia | Memoria espacial (bloques de Corsi) |
+| 🌈 | Gradiente | Ordenar matices |
+| 🦋 | Simetría | Detección de simetría |
+| 🏎️ | Velocidad | Igualar velocidades |
+| 🐌 | Lento | Detectar el objeto más lento |
 
 ## Uso local
 

@@ -33,13 +33,13 @@ function home() {
       <h1 class="logo">${BRAND}</h1>
       <div class="meta">#${no} · ${date}</div>
       <div class="emojis">${set.map(c => `<span title="${c.name}">${c.emoji}</span>`).join('')}</div>
-      <p class="tag">Cinco pruebas de instinto perceptivo, elegidas cada día entre veinte. Dos minutos. Una puntuación.</p>
+      <p class="tag">Cinco pruebas de instinto perceptivo, elegidas cada día entre ${CHALLENGES.length}. Dos minutos. Una puntuación.</p>
       ${done
         ? `<div class="done">Hoy: <b>${done.total}</b> / 500 · <span class="grade g-${done.grade}">${done.grade}</span></div>
            <button class="btn primary" data-a="see">Ver resultado</button>`
         : `<button class="btn primary big" data-a="play">Jugar</button>`}
       <div class="row">
-        <button class="btn" data-a="all">Los 20 retos</button>
+        <button class="btn" data-a="all">Los ${CHALLENGES.length} retos</button>
         <button class="btn" data-a="rand">Partida aleatoria</button>
       </div>
       <div class="foot">Todo se guarda solo en este navegador.</div>
@@ -58,7 +58,7 @@ function catalog() {
   const best = store.get('best', {});
   screen().innerHTML = `
     <div class="catalog">
-      <h2>Los 20 retos</h2>
+      <h2>Los ${CHALLENGES.length} retos</h2>
       <p class="sub">Practica cualquiera por separado. Tu mejor marca queda guardada.</p>
       <div class="cards">${CHALLENGES.map(c => `
         <button class="card" data-id="${c.id}">
@@ -68,7 +68,7 @@ function catalog() {
       </div>
       <div class="row">
         <button class="btn" data-a="home">◂ Inicio</button>
-        <button class="btn primary" data-a="marathon">Maratón: los 20 seguidos</button>
+        <button class="btn primary" data-a="marathon">Maratón: los ${CHALLENGES.length} seguidos</button>
       </div>
     </div>`;
   screen().querySelectorAll('.card').forEach(b => b.addEventListener('click', () => {
@@ -150,8 +150,8 @@ function results(run, opts) {
              <li><span class="em">${byId[e.id].emoji}</span><span class="nm">${byId[e.id].name}</span><span class="dt">${esc(e.detail)}</span>
              <span class="sc">${e.score}</span><i class="grade g-${e.grade}">${e.grade}</i></li>`).join('')}</ul>`}
       <div class="row">
-        ${single ? `<button class="btn primary" data-a="again">Otra vez</button><button class="btn" data-a="all">Los 20 retos</button>`
-                 : `<button class="btn primary" data-a="share">Copiar resultado</button><button class="btn" data-a="all">Los 20 retos</button>`}
+        ${single ? `<button class="btn primary" data-a="again">Otra vez</button><button class="btn" data-a="all">Los ${CHALLENGES.length} retos</button>`
+                 : `<button class="btn primary" data-a="share">Copiar resultado</button><button class="btn" data-a="all">Los ${CHALLENGES.length} retos</button>`}
         <button class="btn" data-a="home">Inicio</button>
       </div>
     </div>`;

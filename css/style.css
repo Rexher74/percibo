@@ -69,7 +69,7 @@ input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px va
 
 .catalog h2 { font: 700 24px var(--mono); letter-spacing: .1em; }
 .sub { color: var(--dim); font-size: 15px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; width: 100%; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(124px, 1fr)); gap: 10px; width: 100%; }
 .card { display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 8px; background: var(--panel); border: 1px solid var(--faint); color: var(--ink); cursor: pointer; font-family: var(--mono); transition: border-color .12s, transform .08s; }
 .card:hover { border-color: var(--you); transform: translateY(-2px); }
 .card .em { font-size: 28px; }
@@ -93,6 +93,7 @@ input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px va
 .g-C { color: #c3cbd3; } .g-D { color: #ffa94d; } .g-F { color: var(--bad); }
 
 kbd { font-family: var(--mono); }
+.sw { display: inline-block; width: 18px; height: 18px; margin-right: 8px; vertical-align: -3px; }
 .toast { position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); background: var(--ink); color: var(--bg); font: 700 14px var(--mono); padding: 8px 16px; z-index: 10; }
 
 @media (max-width: 600px) {
